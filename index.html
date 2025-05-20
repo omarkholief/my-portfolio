@@ -1,17 +1,353 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio</title>
-        <script src="https:cdn.tailwindcss.com"></script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Omar's Portfolio</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+        </style>
+
+        <!-- Tailwind CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                darkMode: 'class',
+            };
+        </script>
+
+        <!-- AOS CSS -->
+        <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
     </head>
 
-    <body>
+    <body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
 
+        <!-- Header -->
+        <header class="bg-white dark:bg-gray-800 text-gray-800 dark:text-white shadow-md sticky top-0 z-50">
+            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+                <h1 class="text-xl font-bold" data-aos="fade-down">Omar Ibrahim</h1>
 
+                <nav class="hidden md:flex space-x-6" data-aos="fade-down" data-aos-delay="100">
+                    <a href="#home" class="hover:text-blue-500 transition">Home</a>
+                    <a href="#about" class="hover:text-blue-500 transition">About</a>
+                    <a href="#projects" class="hover:text-blue-500 transition">Projects</a>
+                    <a href="#contact" class="hover:text-blue-500 transition">Contact</a>
+                </nav>
+
+                <div class="flex items-center space-x-4" data-aos="fade-down" data-aos-delay="200">
+                    <button id="theme-toggle">
+                        <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 3v1m0 16v1m8.66-13.66l-.71.71M4.05 19.95l-.71.71M21 12h1M2 12H1m3.34-6.66l.71.71M19.95 19.95l.71.71M12 5a7 7 0 000 14a7 7 0 000-14z" />
+                        </svg>
+                    </button>
+                    <button id="menu-btn" class="md:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2">
+                <a href="#home" class="block py-2">Home</a>
+                <a href="#about" class="block py-2">About</a>
+                <a href="#projects" class="block py-2">Projects</a>
+                <a href="#contact" class="block py-2">Contact</a>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center px-4 bg-gray-100 dark:bg-gray-900">
+            <div class="max-w-5xl w-full flex flex-col-reverse md:flex-row items-center gap-10 md:gap-16 py-20">
+                <div class="text-center md:text-left" data-aos="fade-right">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 dark:text-white mb-4">I'm Omar Ibrahim
+                    </h2>
+                    <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-6">
+                        Front-End Web Developer & Accounting Student.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#contact"
+                            class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition shadow-md">Contact
+                            Me</a>
+                        <a href="#"
+                            class="border border-blue-600 text-blue-600 hover:bg-blue-50 dark:hover:bg-gray-800 px-6 py-3 rounded-lg transition shadow-md">Download
+                            CV</a>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <img src="image/IMG-20220921-WA0004.jpg" alt="Omar Ibrahim"
+                        class="rounded-full w-60 h-60 object-cover shadow-xl border-4 border-blue-600">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 px-4 bg-white dark:bg-gray-800">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-6" data-aos="fade-up">About
+                    Me</h2>
+                <p class="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-relaxed mb-8" data-aos="fade-up"
+                    data-aos-delay="100">
+                    I'm <span class="font-semibold text-blue-600 dark:text-blue-400">Omar Khalief</span>, a passionate
+                    Front-End Web Developer and a student at Al-Azhar University studying Accounting.
+                    I love building modern, responsive websites using <span class="font-medium">HTML, Tailwind CSS, and
+                        JavaScript</span>.
+                    I also enjoy learning new technologies and turning creative ideas into real projects.
+                </p>
+
+                <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 mt-8">
+                    <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-xl shadow" data-aos="zoom-in">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Education</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">Third-year student, Faculty of Commerce,
+                            Al-Azhar University</p>
+                    </div>
+                    <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-xl shadow" data-aos="zoom-in"
+                        data-aos-delay="100">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Tech Stack</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">HTML, CSS, Tailwind CSS, JavaScript, Vue.js
+                        </p>
+                    </div>
+                    <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-xl shadow" data-aos="zoom-in"
+                        data-aos-delay="200">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Hobbies</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">Football, Jiu-Jitsu, Web Programming</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 px-4 bg-gray-100 dark:bg-gray-900">
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-10" data-aos="fade-up">
+                    My Projects
+                </h2>
+
+                <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <!-- Project Card 1 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden" data-aos="fade-up"
+                        data-aos-delay="100">
+                        <img src="image/th (2).jpeg" alt="Project 1" class="w-full h-48 object-cover">
+                        <div class="p-6 text-left">
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">E-Commerce Website</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">A responsive e-commerce site with
+                                product
+                                pages, cart, wishlist, and dark mode built with HTML, Tailwind, and JS.</p>
+                            <a href="#" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline">View
+                                Project</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden" data-aos="fade-up"
+                        data-aos-delay="200">
+                        <img src="image/th.jpeg" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-6 text-left">
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Portfolio Website</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">My personal portfolio with
+                                dark/light
+                                toggle, smooth animations, and clean sections for About, Projects, and Contact.</p>
+                            <a href="#" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline">View
+                                Project</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden" data-aos="fade-up"
+                        data-aos-delay="300">
+                        <img src="image/th (1).jpeg" alt="Project 3" class="w-full h-48 object-cover">
+                        <div class="p-6 text-left">
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">To-Do App</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Simple task manager built with
+                                vanilla
+                                JavaScript and Tailwind CSS. Features include add/delete and persistent storage.</p>
+                            <a href="#" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline">View
+                                Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 px-4 bg-white dark:bg-gray-950">
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-10" data-aos="fade-up">
+                    My Skills
+                </h2>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-gray-800 dark:text-white">
+                    <!-- Skill Item -->
+                    <div class="flex flex-col items-center space-y-2" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                            class="w-12 h-12" alt="HTML">
+                        <span>HTML5</span>
+                    </div>
+                    <!-- Skill Item -->
+                    <div class="flex flex-col items-center space-y-2" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                            class="w-12 h-12" alt="CSS">
+                        <span>CSS3</span>
+                    </div>
+                    <!-- Skill Item -->
+                    <div class="flex flex-col items-center space-y-2" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                            class="w-12 h-12" alt="JavaScript">
+                        <span>JavaScript</span>
+                    </div>
+                    <!-- Skill Item -->
+                    <div class="flex flex-col items-center space-y-2" data-aos="zoom-in" data-aos-delay="400">
+                        <img src="image/Tailwind_CSS_Logo.svg.png" class="w-12 h-12" alt="Tailwind">
+                        <span>Tailwind CSS</span>
+                    </div>
+                    <!-- Skill Item -->
+                    <div class="flex flex-col items-center space-y-2" data-aos="zoom-in" data-aos-delay="500">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
+                            class="w-12 h-12" alt="Vue">
+                        <span>Vue.js</span>
+                    </div>
+                    <!-- Skill Item -->
+                    <div class="flex flex-col items-center space-y-2" data-aos="zoom-in" data-aos-delay="500">
+                        <img src="image/sass-logo-2.png.crdownload" class="w-12 h-12" alt="Vue">
+                        <span>SASS CSS</span>
+                    </div>
+                    <!-- Skill Item -->
+                    <div class="flex flex-col items-center space-y-2" data-aos="zoom-in" data-aos-delay="600">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                            class="w-12 h-12 dark:invert" alt="GitHub">
+                        <span>GitHub</span>
+                    </div>
+                    <!-- Skill Item -->
+                    <div class="flex flex-col items-center space-y-2" data-aos="zoom-in" data-aos-delay="600">
+                        <img src="image/th (3).jpeg" class="w-12 h-12 dark:invert" alt="GitHub">
+                        <span>Jiu-Jitsu</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 px-4 bg-gray-100 dark:bg-gray-900">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 dark:text-white mb-10"
+                    data-aos="fade-up">
+                    Contact Me
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Contact Info -->
+                    <div class="space-y-4 text-gray-700 dark:text-gray-300" data-aos="fade-right">
+                        <p><strong>Name:</strong> Omar Ibrahim Elsayed Kholief</p>
+                        <p><strong>Email:</strong>
+                            <a href="mailto:omarkholief01@gmail.com" class="text-blue-600 dark:text-blue-400">
+                                omarkholief01@gmail.com
+                            </a>
+                        </p>
+                        <p><strong>Phone:</strong> 01020304941</p>
+                        <p><strong>Location:</strong> Egypt</p>
+
+                        <!-- Social Links -->
+                        <div class="flex space-x-4 mt-6" data-aos="fade-up">
+                            <a href="https://github.com/omarkholief" target="_blank"
+                                class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 text-2xl transition">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/omar-kholief-7ab45734b/" target="_blank"
+                                class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 text-2xl transition">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://www.facebook.com/omar.kholef.5/" target="_blank"
+                                class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 text-2xl transition">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com/omaribrahim507/" target="_blank"
+                                class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 text-2xl transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form class="space-y-4" data-aos="fade-left"
+                        onsubmit="event.preventDefault(); alert('Message sent!');">
+                        <div>
+                            <label class="block mb-1 text-sm font-medium text-gray-800 dark:text-gray-200">Name</label>
+                            <input type="text" required
+                                class="w-full p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label class="block mb-1 text-sm font-medium text-gray-800 dark:text-gray-200">Email</label>
+                            <input type="email" required
+                                class="w-full p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label
+                                class="block mb-1 text-sm font-medium text-gray-800 dark:text-gray-200">Message</label>
+                            <textarea rows="4" required
+                                class="w-full p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-200 dark:bg-gray-800 py-6 mt-20">
+            <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-700 dark:text-gray-300 text-sm text-center md:text-left">
+                    &copy; 2025 Omar Ibrahim. All rights reserved.
+                </p>
+
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="https://github.com/omarkholief" target="_blank"
+                        class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 text-2xl transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/omar-kholief-7ab45734b/" target="_blank"
+                        class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 text-2xl transition">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.facebook.com/omar.kholef.5/" target="_blank"
+                        class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 text-2xl transition">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/omaribrahim507/" target="_blank"
+                        class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 text-2xl transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Back to Top Button -->
+        <button id="backToTop"
+            class="fixed bottom-6 right-6 z-50 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-opacity opacity-0 pointer-events-none">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <!-- Scripts -->
         <script src="app.js"></script>
+
+        <!-- AOS JS -->
+        <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 1000,
+                once: true,
+            });
+        </script>
     </body>
 
 </html>
